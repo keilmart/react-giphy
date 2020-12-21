@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/keilmart/react-giphy/static/css/main.3a756454.chunk.css",
-    "main.js": "/keilmart/react-giphy/static/js/main.cc75f75d.chunk.js",
-    "main.js.map": "/keilmart/react-giphy/static/js/main.cc75f75d.chunk.js.map",
-    "runtime-main.js": "/keilmart/react-giphy/static/js/runtime-main.01f7d37f.js",
-    "runtime-main.js.map": "/keilmart/react-giphy/static/js/runtime-main.01f7d37f.js.map",
-    "static/js/2.4ec02482.chunk.js": "/keilmart/react-giphy/static/js/2.4ec02482.chunk.js",
-    "static/js/2.4ec02482.chunk.js.map": "/keilmart/react-giphy/static/js/2.4ec02482.chunk.js.map",
-    "index.html": "/keilmart/react-giphy/index.html",
-    "precache-manifest.05151c72a6e232d0da1db0053d808688.js": "/keilmart/react-giphy/precache-manifest.05151c72a6e232d0da1db0053d808688.js",
-    "service-worker.js": "/keilmart/react-giphy/service-worker.js",
-    "static/css/main.3a756454.chunk.css.map": "/keilmart/react-giphy/static/css/main.3a756454.chunk.css.map",
-    "static/js/2.4ec02482.chunk.js.LICENSE.txt": "/keilmart/react-giphy/static/js/2.4ec02482.chunk.js.LICENSE.txt",
-    "static/media/Header.css": "/keilmart/react-giphy/static/media/header.13b2918d.png"
+    "main.css": "/github.com/keilmart/react-giphy/static/css/main.2e600bb9.chunk.css",
+    "main.js": "/github.com/keilmart/react-giphy/static/js/main.c342c9ff.chunk.js",
+    "main.js.map": "/github.com/keilmart/react-giphy/static/js/main.c342c9ff.chunk.js.map",
+    "runtime-main.js": "/github.com/keilmart/react-giphy/static/js/runtime-main.5623bf56.js",
+    "runtime-main.js.map": "/github.com/keilmart/react-giphy/static/js/runtime-main.5623bf56.js.map",
+    "static/js/2.4ec02482.chunk.js": "/github.com/keilmart/react-giphy/static/js/2.4ec02482.chunk.js",
+    "static/js/2.4ec02482.chunk.js.map": "/github.com/keilmart/react-giphy/static/js/2.4ec02482.chunk.js.map",
+    "index.html": "/github.com/keilmart/react-giphy/index.html",
+    "precache-manifest.c600fe760a581f38cbab3aa4bc582ac2.js": "/github.com/keilmart/react-giphy/precache-manifest.c600fe760a581f38cbab3aa4bc582ac2.js",
+    "service-worker.js": "/github.com/keilmart/react-giphy/service-worker.js",
+    "static/css/main.2e600bb9.chunk.css.map": "/github.com/keilmart/react-giphy/static/css/main.2e600bb9.chunk.css.map",
+    "static/js/2.4ec02482.chunk.js.LICENSE.txt": "/github.com/keilmart/react-giphy/static/js/2.4ec02482.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/github.com/keilmart/react-giphy/static/media/header.13b2918d.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.01f7d37f.js",
+    "static/js/runtime-main.5623bf56.js",
     "static/js/2.4ec02482.chunk.js",
-    "static/css/main.3a756454.chunk.css",
-    "static/js/main.cc75f75d.chunk.js"
+    "static/css/main.2e600bb9.chunk.css",
+    "static/js/main.c342c9ff.chunk.js"
   ]
 }
