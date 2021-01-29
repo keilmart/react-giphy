@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchBar from './SearchBar';
 import Loader from 'react-loader-spinner'
 import { scroller } from "react-scroll";
 import { motion } from "framer-motion";
@@ -19,15 +20,19 @@ class Header extends Component {
     }
 
     render() {
-        if (this.state.loading) {
-            return <div className="loadScreen"><Loader
-                type="Puff"
-                color="#ecbfea"
-                height={100}
-                width={100}
-                timeout={3000} //3 secs
-            /></div>;
-        }
+    if (this.state.loading) {
+      return (
+        <div class="loadScreen">
+          <Loader
+            type="MutatingDots"
+            color="#4f7cff"
+            secondaryColor="#f35163"
+            height={100}
+            width={100}
+          />
+        </div>
+      );
+    }
         return (
             <header>
                 <motion.div
@@ -39,6 +44,7 @@ class Header extends Component {
                         <h1>Todays Trending Giphys!</h1>
                     </div>
                 </motion.div>
+                <SearchBar onTermChange={this.handleTermChange} />
                 <button
                     onClick={(e) => scroller.scrollTo("Results", {
                         duration: 1200,
