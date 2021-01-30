@@ -6,6 +6,7 @@ import "firebase/database";
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   // Your web app's Firebase configuration
+  
   var firebaseConfig = {
     apiKey: "AIzaSyDiBkZqfQVr-348Rzm0BtdjnM8yVwlG_pw",
     authDomain: "giphy-soapbox-app.firebaseapp.com",

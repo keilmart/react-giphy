@@ -1,63 +1,10 @@
-h1 {
-    font-size: 3.2rem;
-    letter-spacing: 5px;
-    color: white;
-}
+    header {
 
-@media (max-width: 940px) {
-    h1 {
-    font-size: 2.2rem;
-    letter-spacing: 3.8px;
+    height: 150px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     }
-}
-
-@media (max-width: 600px) {
-    h1 {
-    font-size: 1.5rem;
-    letter-spacing: 3.8px;
-    margin-bottom: 50px;
-    }
-}
-
-h2 {
-    font-size: 1.7rem;
-    letter-spacing: 4.5px;
-    color: white;
-}
-
-@media (max-width: 940px) {
-    h2 {
-    font-size: 1.5rem;
-    letter-spacing: 3.2px;
-    }
-}
-
-@media (max-width: 600px) {
-    h2 {
-    font-size: 1rem;
-    letter-spacing: 3.2px;
-    }
-}
-
-Header {
-min-height: 100vh;
-background-image: url('./assets/header.png');
-background-size: cover;
-background-position: 50%;
-padding: 1px 0;
-display: -webkit-flex;
-display: flex;
--webkit-flex-direction: column;
-flex-direction: column;
--webkit-justify-content: center;
-justify-content: center;
--webkit-align-items: center;
-align-items: center;
-}
-
-.backer {
-    background: rgba(0, 0, 0, .7);
-    padding: 20px;
-    border-radius: 25px;
-    margin-bottom: 80px;
-}

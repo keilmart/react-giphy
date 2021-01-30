@@ -22,7 +22,7 @@ class Results extends Component {
             dataResponse: `json`,
             params: {
                 api_key: `P4hCy0QXgCWhBkBv1WS8E4upKd540JNg`,
-                limit: 16,
+                limit: 20,
                 offset: 0,
                 rating: 'g',
             },
