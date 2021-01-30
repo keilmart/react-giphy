@@ -26,6 +26,7 @@ class Results extends Component {
                 offset: 0,
                 rating: 'g',
             },
+
         })
             // Get back the data and parse for what I want, I pass a callback function because thats a set of steps that we tell what to do // .data goes into the array //
             .then((giphyAxiosResponse) => {
@@ -53,6 +54,8 @@ class Results extends Component {
                 // timeout={3000} //3 secs
             /></div>;
         }
+
+        
         return (
             <div className="Results">
                 <main>
