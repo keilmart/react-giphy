@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import "../Results.css";
 
 class Results extends Component {
+
     constructor() {
         super();
         this.state = {
@@ -43,6 +44,7 @@ class Results extends Component {
                 }
             );
     }
+    
 
     render() {
         if (this.state.loading) {
@@ -55,7 +57,7 @@ class Results extends Component {
             /></div>;
         }
 
-        
+
         return (
             <div className="Results">
                 <main>

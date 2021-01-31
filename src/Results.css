@@ -1,3 +1,32 @@
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header {
+    height: 150px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.homepageContainer {
+  width: 100%;
+  height: calc(100vh - 150px);
+  /* background-image: url("../assets/homepageBackground.png"); */
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
 li {
   text-decoration: none;
 }
