@@ -1,80 +1,49 @@
-import React, { Component } from "react";
-import axios from "axios";
-// import Loader from 'react-loader-spinner'
-import "../App.css";
+import React, { Component } from 'react';
+import '../App.css';
+import _ from 'lodash'
+
+const API_KEY = "P4hCy0QXgCWhBkBv1WS8E4upKd540JNg"
 
 class Results extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            giphyMainArray: [],
-            loading: true,
-        };
+  constructor() {
+    super()
+    this.state = {
+      gifs: {}
     }
+  }
 
-    async componentDidMount() {
-        await axios({
-            url: `https://api.giphy.com/v1/gifs/trending`,
-            method: `GET`,
-            dataResponse: `json`,
-            params: {
-                api_key: `P4hCy0QXgCWhBkBv1WS8E4upKd540JNg`,
-                limit: 12,
-                offset: 0,
-                rating: 'g',
-            },
+  componentDidMount() {
+    this.apiCallToGiphy("computers")
+  }
 
+  apiCallToGiphy(usersEnteredText) {
+    return fetch(`http://api.giphy.com/v1/gifs/search?q=${usersEnteredText}&api_key=${API_KEY}&limit=24`)
+    .then( res => res.json() )
+    .then(json => {
+      if(json.error) {
+        alert("There was an error")
+      } else {
+        this.setState({
+          gifs: json
         })
-            // Get back the data and parse for what I want, I pass a callback function because thats a set of steps that we tell what to do // .data goes into the array //
-            .then((giphyAxiosResponse) => {
-                // this is saving the data into set state.App // this refers to the component that we are inside of // every time setState runs, it re renders the page // 
-                this.setState({
-                    giphyMainArray: giphyAxiosResponse.data.data,
-                    loading: false,
-                });
-            }
-            ).catch(
-                function (error) {
-                    console.log('Show error notification!')
-                    return Promise.reject(error)
-                }
-            );
-    }
-    
+      }
+    })
+  }
 
-    render() {
-        // if (this.state.loading) {
-        //     return <div className="loadScreen"><Loader
-        //         type="Puff"
-        //         color="#ecbfea"
-        //         height={100}
-        //         width={100}
-        //         // timeout={3000} //3 secs
-        //     /></div>;
-        // }
+  render() {
+    const apiCallToGiphy = _.debounce((usersEnteredText) => {this.apiCallToGiphy(usersEnteredText)}, 200)
 
-    return (
-            <div className="Results">
-                <main>
-                    <div className="container">
-                        <ul className="wrapper container">
-                            {this.state.giphyMainArray.map((giphysToRender) => {
-                                return (
-                                        <li div key={giphysToRender.id} className="giphysStyle">
-                                            <div className="imgHold">
-                                                <img src={giphysToRender.images.fixed_height.url} />
-                                            </div>
-                                            <h4>{giphysToRender.title}</h4>
-                                        </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </main>
-            </div >
-        );
+    if(!this.state.gifs.data) {
+      return null
+    } else {
+      return (
+        <div className="container">
+          <div>
+          </div>
+        </div>
+      );
     }
+  }
 }
 
 export default Results;

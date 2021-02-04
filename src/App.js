@@ -35,7 +35,7 @@ class App extends Component {
       <header>
         <div className="wrapper">
           <div className="buttonContainer">
-            <button className="findYourGighy" onClick={this.displayHomepageComponent}>Home</button>
+            <button className="findYourGighy" onClick={this.displayHomepageComponent}>The Gif</button>
             <button className="findYourGighy" onClick={this.displayResultsComponent}>Launch App</button>
           </div>
         </div>
