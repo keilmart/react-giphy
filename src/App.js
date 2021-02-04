@@ -4,6 +4,7 @@ import Results from "./components/Results.js";
 
 import './App.css';
 class App extends Component {
+  // Below are 2 functions for the "Homepage" and "Results page", Since the header is "static" it will navigate to the page based on the users input, in this case picking either the home button or the button for the results //
     constructor() {
         super();
         this.state = {

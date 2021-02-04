@@ -16,18 +16,17 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="sixteen wide column">
-        <div className="ui segment secondary">
-          <div className="ui huge fluid input">
+        <div className="searchContainer">
+          <h1>Start Searching now!</h1>
+          <div>
             <input
               type="text"
-              placeholder="Search all the GIFs..."
+              placeholder="Start Searching"
               value={this.state.searchTerm}
               onChange={(ev) => this.handleSearchBarChange(ev.target.value)}
             />
-          </div>
+            </div>
         </div>
-      </div>
     )
   }
 }
