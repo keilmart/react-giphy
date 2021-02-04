@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Loader from 'react-loader-spinner'
 import Homepage from "./components/Homepage.js";
 import Results from "./components/Results.js";
 
@@ -31,20 +30,6 @@ class App extends Component {
     }
 
   render() {
-        if (this.state.loading) {
-      return (
-        <div class="loadScreen">
-          <Loader
-            type="MutatingDots"
-            color="#4f7cff"
-            secondaryColor="#f35163"
-            height={100}
-            width={100}
-            timeout={1500} //3 secs
-          />
-        </div>
-      );
-    }
   return (
     <React.Fragment>
       <header>

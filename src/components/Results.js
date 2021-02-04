@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Loader from 'react-loader-spinner'
-import ScrollUpButton from "react-scroll-up-button";
-import { motion } from "framer-motion";
-import Container from 'react-bootstrap/Container';
+// import Loader from 'react-loader-spinner'
 import "../App.css";
 
 class Results extends Component {
@@ -47,47 +44,33 @@ class Results extends Component {
     
 
     render() {
-        if (this.state.loading) {
-            return <div className="loadScreen"><Loader
-                type="Puff"
-                color="#ecbfea"
-                height={100}
-                width={100}
-                // timeout={3000} //3 secs
-            /></div>;
-        }
+        // if (this.state.loading) {
+        //     return <div className="loadScreen"><Loader
+        //         type="Puff"
+        //         color="#ecbfea"
+        //         height={100}
+        //         width={100}
+        //         // timeout={3000} //3 secs
+        //     /></div>;
+        // }
 
     return (
             <div className="Results">
                 <main>
-                    <Container fluid>
+                    <div className="container">
                         <ul className="wrapper container">
                             {this.state.giphyMainArray.map((giphysToRender) => {
                                 return (
-                                    <motion.div
-                                        whileHover={{ scale: 1.15 }}
-                                        whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}
-                                        className="column"
-                                    >
                                         <li div key={giphysToRender.id} className="giphysStyle">
                                             <div className="imgHold">
                                                 <img src={giphysToRender.images.fixed_height.url} />
                                             </div>
                                             <h4>{giphysToRender.title}</h4>
                                         </li>
-                                    </motion.div>
                                 );
                             })}
                         </ul>
-                    </Container>
-                    <ScrollUpButton
-                        StopPosition={0}
-                        ShowAtPosition={150}
-                        EasingType="easeOutCubic"
-                        AnimationDuration={500}
-                        ContainerClassName="ScrollUpButton__Container"
-                        TransitionClassName="ScrollUpButton__Toggled"
-                    />
+                    </div>
                 </main>
             </div >
         );
