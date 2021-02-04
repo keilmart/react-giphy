@@ -1,27 +1,25 @@
 import React, { Component } from "react";
-import firebase from './Services/firebase.js'
 import Loader from 'react-loader-spinner'
-import SearchBar from './components/SearchBar';
 import Homepage from "./components/Homepage.js";
 import Results from "./components/Results.js";
 
 import './App.css';
-
-firebase.firestore().collection('times').add({
-  title: 'Rubiks Cube',
-  time_seconds: 45
-})
-
-
 class App extends Component {
     constructor() {
         super();
         this.state = {
             displayHomepage: true,
             displayResults: false,
-            giphys: [],
             loading: false,
         };
+    }
+
+    displayHomepageComponent = () => {
+        this.setState({
+            displayHomepage: true,
+            displayResults: false,
+            loading: false,
+        });
     }
 
     displayResultsComponent = () => {
@@ -51,22 +49,21 @@ class App extends Component {
     <React.Fragment>
       <header>
         <div className="wrapper">
-            {/* <div className="logoContainer">
-            <img src={logo} alt="" onClick={this.displayHomepage}></img>
-          </div> */}
-          <h1>logo</h1>
-        <div className="changeThis">
-          <button className="findYourGighy" onClick={this.displayResultsComponent}>Find your Giphy's!</button>
-        </div>
-        </div>
+          <div className="container">
+            <div>
+                <button className="findYourGighy" onClick={this.displayHomepageComponent}>Go Home</button>
+              </div>
+              <div>
+                <button className="findYourGighy" onClick={this.displayResultsComponent}>Find your Giphy's!</button>
+              </div>
+            </div>
+          </div>
         </header >
-          <main className="wrapper">
-            {/* <button className="findYourGighy" onClick={this.displayResultsComponent}>Find your Giphy's!</button> */}
-            {this.state.displayHomepage ? <Homepage goToResultsProps={this.displayHomepage} /> : null}
-            {this.state.displayResults ? <Results resultsProps={this.state.displayResults} /> : null}
-          </main>
-        {/* {this.state.displayHomepage ? null : <Footer />} */}
-      </React.Fragment>
+      <main className="wrapper">
+        {this.state.displayHomepage ? <Homepage homepageProps={this.displayHomepage} /> : null}
+        {this.state.displayResults ? <Results resultsProps={this.state.displayResults} /> : null}
+      </main>
+    </React.Fragment>
     );
   }
 }

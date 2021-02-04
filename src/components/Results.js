@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner'
 import ScrollUpButton from "react-scroll-up-button";
 import { motion } from "framer-motion";
 import Container from 'react-bootstrap/Container';
-import "../Results.css";
+import "../App.css";
 
 class Results extends Component {
 
@@ -23,7 +23,7 @@ class Results extends Component {
             dataResponse: `json`,
             params: {
                 api_key: `P4hCy0QXgCWhBkBv1WS8E4upKd540JNg`,
-                limit: 20,
+                limit: 12,
                 offset: 0,
                 rating: 'g',
             },
@@ -57,8 +57,7 @@ class Results extends Component {
             /></div>;
         }
 
-
-        return (
+    return (
             <div className="Results">
                 <main>
                     <Container fluid>
