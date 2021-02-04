@@ -58,7 +58,7 @@ button {
 }
 
 .wrapper {
-    width: 70%;
+    width: 98%;
     margin: 0 auto;
 }
 
@@ -77,26 +77,8 @@ header {
     flex-wrap: wrap;
 }
 
-.homepageContainer {
-  width: 100%;
-  height: calc(100vh - 150px);
-  /* background-image: url("../assets/homepageBackground.png"); */
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -50px;
-}
-
-li {
-  text-decoration: none;
-}
-
 body {
-  background: #ecbfea;
+  background: #131314;
 }
 
 h4 {
@@ -116,6 +98,40 @@ h4 {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-    float: left;
+  grid-gap: 5px;
+  float: left;
+}
+
+h1 {
+  font-family: 'Archivo', sans-serif;
+  color: #FFFFFF;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 72px;
+}
+
+span {
+  color: #FFFFFF;
+}
+
+.mainDescription {
+  width: 40%;
+  padding-left: 30px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.mainImageContainer {
+  width: 60%;
+}
+
+.mainImage {
+  width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
 }
