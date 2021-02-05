@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return (
             <section>
-                <div className="headerContainer">
+                <div className="homepageContainer">
                     <div className="mainImageContainer">
                         <img class="mainImage" src={mainImage} alt="Logo"/>
                     </div>
