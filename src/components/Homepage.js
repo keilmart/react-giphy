@@ -12,8 +12,8 @@ class Header extends Component {
                     </div>
                     <div className="mainDescription">
                         <h1>Stay up to date to with trending Gif's.</h1>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, repellendus? Hic, laboriosam ut. Odio eveniet quod</span>
-                        <span>sapiente, est deserunt, adipisci quaerat cupiditate vel veniam voluptates saepe quam cumque? Molestiae, libero.</span>
+                        <span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, repellendus? Hic, laboriosam ut. Odio eveniet quod</p></span>
+                        <span><p>sapiente, est deserunt, adipisci quaerat cupiditate vel veniam voluptates saepe quam cumque? Molestiae, libero.</p></span>
                     </div>
                 </div>
             </section>

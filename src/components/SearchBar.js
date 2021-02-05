@@ -5,25 +5,26 @@ class SearchBar extends React.Component {
     super(props)
 
     this.state = {
-      searchTerm: ''
+      userSearch: ''
     }
   }
 
-  handleSearchBarChange(searchTerm) {
-    this.setState({ searchTerm })
-    this.props.onChange(searchTerm)
+  handleSearchBarChange(userSearch) {
+    this.setState({ userSearch })
+    this.props.onChange(userSearch)
   }
 
   render() {
     return (
-        <div className="searchContainer">
-          <h1>Start Searching now!</h1>
-          <div>
+        <div className="flexContent">
+          <h2>Enter a keyword to return your results</h2>
+          <div className="flexContent searchBar">
             <input
+              className="inputClass"
               type="text"
-              placeholder="Start Searching"
-              value={this.state.searchTerm}
-              onChange={(ev) => this.handleSearchBarChange(ev.target.value)}
+              placeholder="Enter your search..."
+              value={this.state.userSearch}
+              onChange={(event) => this.handleSearchBarChange(event.target.value)}
             />
             </div>
         </div>

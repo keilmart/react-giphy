@@ -24,7 +24,7 @@ class Results extends Component {
 
   // this is the call to the API, it is async, so it awaits for the reply from the API // 
   apiCallToGiphy = async (usersEnteredText) => {
-    return await fetch(`http://api.giphy.com/v1/gifs/search?q=${usersEnteredText}&api_key=${API_KEY}&limit=20`)
+    return await fetch(`http://api.giphy.com/v1/gifs/search?q=${usersEnteredText}&api_key=${API_KEY}&limit=18`)
     .then( res => res.json() )
     .then(json => {
       if(json.error) {
@@ -44,7 +44,7 @@ class Results extends Component {
     // this is the loader for the gif section, should render a loading spinner and background //
     // if (this.state.loading) {
     //   return (
-    //     <div class="loadScreen">
+    //     <div class="flexContent loadScreen">
     //       <Loader
     //         type="MutatingDots"
     //         color="#4f7cff"

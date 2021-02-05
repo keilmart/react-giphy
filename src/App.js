@@ -35,13 +35,13 @@ class App extends Component {
     <React.Fragment>
       <header>
         <div className="wrapper">
-          <div className="buttonContainer">
-            <button className="findYourGighy" onClick={this.displayHomepageComponent}>The Gif</button>
-            <button className="findYourGighy" onClick={this.displayResultsComponent}>Launch App</button>
+          <div className="flexContent buttonContainer">
+            <button className="inputClass" onClick={this.displayHomepageComponent}>&#x2190; giphy &#x2192;</button>
+            <button className="inputClass" onClick={this.displayResultsComponent}>Launch App &#x2192;</button>
           </div>
         </div>
       </header >
-      <main className="wrapper">
+      <main>
         {this.state.displayHomepage ? <Homepage homepageProps={this.displayHomepage} /> : null}
         {this.state.displayResults ? <Results resultsProps={this.state.displayResults} /> : null}
       </main>

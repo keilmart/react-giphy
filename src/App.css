@@ -1,42 +1,65 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.loadScreen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #1d1e3a;
-}
-
-button {
-  text-align: center;
-  font-size: .9rem;
-  padding: 15px 40px;
-  border-radius: 25px;
-  margin: 30px 20px;
-  border: 1.5px solid #FFFFFF;
+body {
   background: #131314;
+}
+
+img {
+  padding: 5px;
+}
+
+span {
+  line-height: 30px;
   color: #FFFFFF;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Archivo', sans-serif;
+  color: #FFFFFF;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 72px;
+}
+
+h2 {
+  font-family: 'Archivo', sans-serif;
+  color: #FFFFFF;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h4 {
+  color: black;
+  width: 100%;
+  text-align: center;
 }
 
 .wrapper {
-    width: 98%;
+    width: 95%;
     margin: 0 auto;
 }
 
 .flexContent {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.inputClass {
+  text-align: center;
+  font-size: 1rem;
+  padding: 15px 40px;
+  border-radius: 25px;
+  /* margin: 30px 20px; */
+  border: 1.5px solid #FFFFFF;
+  background: #131314;
+  color: #FFFFFF;
+}
+
+.inputClass:hover {
+  background: #62d3dd;
+  color: #131314;
+  transition: 1.5s;
 }
 
 header {
@@ -48,46 +71,6 @@ header {
     align-items: center;
     flex-wrap: wrap;
     border-bottom: 1px solid #FFFFFF;
-}
-
-body {
-  background: #131314;
-}
-
-h4 {
-  color: black;
-  width: 100%;
-  text-align: center;
-}
-
-.giphysStyle {
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-img {
-  padding: 5px;
-}
-
-h1 {
-  font-family: 'Archivo', sans-serif;
-  color: #FFFFFF;
-  font-size: 64px;
-  font-weight: bold;
-  line-height: 72px;
-}
-
-span {
-  color: #FFFFFF;
 }
 
 .mainDescription {
@@ -109,21 +92,19 @@ span {
 }
 
 .buttonContainer {
-  display: flex;
   justify-content: space-between;
 }
 
-.searchContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.searchBar {
+  width: 100vw;
+  padding-bottom: 50px;
 }
 
 /* // Loader // */
 .loadScreen {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   height: 88vh;
   width: 98vw;
   background-color: #1d1e3a;
