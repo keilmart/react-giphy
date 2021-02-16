@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import axios from "axios";
+import axios from "axios";
 import GiphyList from './mainList.js'
 import SearchBar from './SearchBar.js'
-// import Loader from "react-loader-spinner";
+import Loader from "react-loader-spinner";
 import _ from 'lodash'
 import '../App.css';
 
@@ -24,14 +24,15 @@ class Results extends Component {
 
   // this is the call to the API, it is async, so it awaits for the reply from the API // 
   apiCallToGiphy = async (usersEnteredText) => {
-    return await fetch(`http://api.giphy.com/v1/gifs/search?q=${usersEnteredText}&api_key=${API_KEY}&limit=18`)
-    .then( res => res.json() )
-    .then(json => {
-      if(json.error) {
+    return await axios ({
+      url: `http://api.giphy.com/v1/gifs/search?q=${usersEnteredText}&api_key=${API_KEY}&limit=18`})
+    .then( res => res.data )
+    .then(data => {
+      if(data.error) {
         alert("There was an error")
       } else {
         this.setState({
-          gifs: json,
+          gifs: data,
           loading: false,
         })
       }
@@ -42,19 +43,19 @@ class Results extends Component {
     const apiCallToGiphy = _.debounce((usersEnteredText) => {this.apiCallToGiphy(usersEnteredText)}, 200)
 
     // this is the loader for the gif section, should render a loading spinner and background //
-    // if (this.state.loading) {
-    //   return (
-    //     <div class="flexContent loadScreen">
-    //       <Loader
-    //         type="MutatingDots"
-    //         color="#4f7cff"
-    //         secondaryColor="#f35163"
-    //         height={100}
-    //         width={100}
-    //       />
-    //     </div>
-    //   );
-    // }
+    if (this.state.loading) {
+      return (
+        <div class="flexContent loadScreen">
+          <Loader
+            type="MutatingDots"
+            color="#4f7cff"
+            secondaryColor="#f35163"
+            height={100}
+            width={100}
+          />
+        </div>
+      );
+    }
 
     // this is checking for the received data from the state above, if
     if(!this.state.gifs.data) {

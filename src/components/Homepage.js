@@ -8,7 +8,7 @@ class Header extends Component {
             <section>
                 <div className="homepageContainer">
                     <div className="mainImageContainer">
-                        <img class="mainImage" src={mainImage} alt="Logo"/>
+                        <img className="mainImage" src={mainImage} alt="Logo"/>
                     </div>
                     <div className="mainDescription">
                         <h1>Stay up to date to with trending Gif's.</h1>
