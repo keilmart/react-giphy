@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import "../App.css";
 import mainImage from '../assets/mainImage.png';
 class Header extends Component {
     
     render() {
         return (
-            <section>
+            <section className='wrapper'>
                 <div className="homepageContainer">
                     <div className="mainImageContainer">
                         <img className="mainImage" src={mainImage} alt="Logo"/>

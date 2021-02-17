@@ -4,19 +4,18 @@ import axios from "axios";
 import _ from 'lodash'
 import { motion } from "framer-motion";
 import Loader from "react-loader-spinner";
-import '../App.css';
 
 const API_KEY = "P4hCy0QXgCWhBkBv1WS8E4upKd540JNg"
 
 class Results extends Component {
 
     constructor() {
-      super();
+    super();
         this.state = {
-          giphyMainArray: [],
-          loading: true,
+            giphyMainArray: [],
+            loading: true,
         };
-      }
+    }
 
     componentDidMount() {
         this.apiCallToGiphy("computer")
@@ -34,15 +33,15 @@ class Results extends Component {
         },
     })
     
-      .then((giphyAxiosResponse) => {
+    .then((giphyAxiosResponse) => {
                 
             // this is saving the data into set state.App // this refers to the component that we are inside of // every time setState runs, it re renders the page // 
 
         this.setState({
-          giphyMainArray: giphyAxiosResponse.data.data,
-          loading: false,
-        });
-          }
+            giphyMainArray: giphyAxiosResponse.data.data,
+            loading: false,
+            });
+        }
             ).catch(
                 function (error) {
                     console.log('An Error Has Occurred!')
@@ -69,10 +68,10 @@ class Results extends Component {
     return (
         <React.Fragment>
             <SearchBar onChange={(usersEnteredText) => apiCallToGiphy(usersEnteredText)} />
-                        <ul className="flexContent">
+                        <main className="flexContent">
                             {this.state.giphyMainArray.map((giphysToRender) => {
                                 return (
-                                  <div>
+                                <div>
                                     <motion.div
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
@@ -84,11 +83,11 @@ class Results extends Component {
                                                 <a href={giphysToRender.url} target="_blank"><h4>Live Link!</h4></a>
                                             </div>
                                         </li>
-                                  </motion.div>
-                                  </div>
+                                    </motion.div>
+                                </div>
                                 );
                             })}
-                        </ul>
+                        </main>
         </React.Fragment>
         );
     }

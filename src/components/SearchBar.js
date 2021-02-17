@@ -17,12 +17,12 @@ class SearchBar extends React.Component {
   render() {
     return (
         <div className="flexContent">
-          <h3>Enter a keyword to return your results</h3>
+          <h2>Enter a keyword to return your results</h2>
           <div className="flexContent searchBar">
             <input
               className="inputClass"
               type="text"
-              placeholder="Enter your search..."
+              placeholder="Enter your serach..."
               value={this.state.userSearch}
               onChange={(event) => this.handleSearchBarChange(event.target.value)}
             />
