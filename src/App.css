@@ -2,18 +2,6 @@ body {
   background: #131314;
 }
 
-span {
-  line-height: 30px;
-  color: #FFFFFF;
-  padding-bottom: 20px;
-}
-
-a {
-  color: #FFFFFF;
-  width: 100%;
-  text-align: center;
-}
-
 h1 {
   font-family: 'Archivo', sans-serif;
   color: #FFFFFF;
@@ -34,6 +22,9 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
   line-height: 4rem;
+}
+
+h2 .searchHeader {
   text-align: center;
 }
 
@@ -57,6 +48,23 @@ h4 {
   color: #FFFFFF;
   width: 100%;
   text-align: center;
+}
+
+span {
+  line-height: 30px;
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+
+a {
+  font-size: 1.3rem;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+}
+
+a:hover h4 {
+  color: #62d3dd;
 }
 
 header {
@@ -132,14 +140,12 @@ header {
 }
 
 .homepageContainer {
-  /* height: 87vh; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* flex-direction: column; */
 }
 
 @media (max-width: 1100px) {
@@ -203,26 +209,26 @@ header {
           animation-fill-mode: forwards;
 }
 
-.giphyListItem:hover img {
-  opacity: .1;
-}
-
 .giphyListItem h4 {
   position: absolute;
   bottom: 55%;
   visibility: hidden;
 }
 
-.giphyListItem:hover h4 {
-  visibility: visible;
-}
-
 .giphyListItem a {
   display: block;
   position: absolute;
-  bottom: 40%;
+  bottom: 38%;
   visibility: hidden;
   width: 100%;
+}
+
+.giphyListItem:hover img {
+  opacity: .1;
+}
+
+.giphyListItem:hover h4 {
+  visibility: visible;
 }
 
 /* // Loader // */

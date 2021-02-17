@@ -21,7 +21,6 @@ class Results extends Component {
         this.apiCallToGiphy("computer")
     }
 
-
     apiCallToGiphy = async (usersEnteredText) => {
         return await axios ({
             method: `GET`,
@@ -80,7 +79,7 @@ class Results extends Component {
                                             <div className="giphyImageContainer">
                                                 <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
                                                 <h4>{giphysToRender.title}</h4>
-                                                <a href={giphysToRender.url} target="_blank"><h4>Live Link!</h4></a>
+                                                <a href={giphysToRender.url} target="_blank"><h4>Click Me!</h4></a>
                                             </div>
                                         </li>
                                     </motion.div>

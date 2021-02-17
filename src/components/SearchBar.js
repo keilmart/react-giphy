@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
   render() {
     return (
         <div className="flexContent">
-          <h2>Enter a keyword to return your results</h2>
+          <h2 className="searchHeader">Enter a keyword to return your results</h2>
           <div className="flexContent searchBar">
             <input
               className="inputClass"
