@@ -11,7 +11,8 @@ class Header extends Component {
                         <img className="mainImage" src={mainImage} alt="Logo"/>
                     </div>
                     <div className="mainDescription">
-                        <h1>Stay up to date to with trending Gif's.</h1>
+                        <h1>giphy</h1>
+                        <h2>Stay up to date to with trending Gif's.</h2>
                         <span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, repellendus? Hic, laboriosam ut. Odio eveniet quod</p></span>
                         <span><p>sapiente, est deserunt, adipisci quaerat cupiditate vel veniam voluptates saepe quam cumque? Molestiae, libero.</p></span>
                     </div>

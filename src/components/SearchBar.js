@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
   render() {
     return (
         <div className="flexContent">
-          <h2>Enter a keyword to return your results</h2>
+          <h3>Enter a keyword to return your results</h3>
           <div className="flexContent searchBar">
             <input
               className="inputClass"
@@ -32,4 +32,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar
+export default SearchBar;
