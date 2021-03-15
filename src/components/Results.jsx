@@ -20,6 +20,7 @@ class Results extends Component {
 
     componentDidMount() {
         this.apiCallToGiphy("computer")
+        this.apiCallToTrending()
     }
 
     apiCallToGiphy = async (usersEnteredText) => {
@@ -28,7 +29,7 @@ class Results extends Component {
             dataResponse: `json`,
             url: `https://api.giphy.com/v1/gifs/search?q=${usersEnteredText}&api_key=${API_KEY}`,
             params: {
-                limit: 18,
+                limit: 12,
                 offset: 0,
         },
     })
@@ -50,8 +51,35 @@ class Results extends Component {
             );
         }
 
+            apiCallToTrending = async () => {
+        return await axios ({
+            method: `GET`,
+            dataResponse: `json`,
+            url: `http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
+            params: {
+                limit: 6,
+                offset: 0,
+        },
+    })
+    
+    .then((trendingAxiosResponse) => {
+                
+            // this is saving the data into set state.App // this refers to the component that we are inside of // every time setState runs, it re renders the page // 
+        this.setState({
+            giphyTrendingArray: trendingAxiosResponse.data.data,
+            loading: false,
+            });
+        }
+            ).catch(
+                function (error) {
+                    console.log('An Error Has Occurred!')
+                    return Promise.reject(error)
+                }
+            );
+        }
+
     render() {
-        // console.log(this.state.giphyTrendingArray)
+        console.log(this.state.giphyTrendingArray)
         const apiCallToGiphy = _.debounce((usersEnteredText) => {this.apiCallToGiphy(usersEnteredText)}, 200)
 
         if (this.state.loading) {
@@ -66,8 +94,31 @@ class Results extends Component {
 
     return (
         <React.Fragment>
-            <SearchBar onChange={(usersEnteredText) => apiCallToGiphy(usersEnteredText)} />
                         <main className="flexContent">
+
+                            <h2 className="searchHeader">Todays trending Gif's</h2>
+                            
+                            {this.state.giphyTrendingArray.map((giphysToRender) => {
+                                return (
+                                <div key={giphysToRender.id}>
+                                    <motion.div
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
+                                    >
+                                        <li className="giphyListItem">
+                                            <div className="giphyImageContainer">
+                                                <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
+                                                <h4>{giphysToRender.title}</h4>
+                                                <a href={giphysToRender.url} target="_blank" rel="noopener noreferrer"><h4>Click Me!</h4></a>
+                                            </div>
+                                        </li>
+                                    </motion.div>
+                                </div>
+                                );
+                            })}
+
+                            <SearchBar onChange={(usersEnteredText) => apiCallToGiphy(usersEnteredText)} />
+
                             {this.state.giphyMainArray.map((giphysToRender) => {
                                 return (
                                 <div key={giphysToRender.id}>
@@ -86,6 +137,7 @@ class Results extends Component {
                                 </div>
                                 );
                             })}
+
                         </main>
         </React.Fragment>
         );
