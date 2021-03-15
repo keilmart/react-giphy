@@ -13,6 +13,7 @@ class Results extends Component {
     super();
         this.state = {
             giphyMainArray: [],
+            giphyTrendingArray: [],
             loading: true,
         };
     }
@@ -48,10 +49,9 @@ class Results extends Component {
                 }
             );
         }
-    
 
     render() {
-        console.log(this.state.giphysMainArray)
+        // console.log(this.state.giphyTrendingArray)
         const apiCallToGiphy = _.debounce((usersEnteredText) => {this.apiCallToGiphy(usersEnteredText)}, 200)
 
         if (this.state.loading) {
@@ -70,16 +70,16 @@ class Results extends Component {
                         <main className="flexContent">
                             {this.state.giphyMainArray.map((giphysToRender) => {
                                 return (
-                                <div>
+                                <div key={giphysToRender.id}>
                                     <motion.div
                                         whileHover={{ scale: 1.1 }}
                                         whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
                                     >
-                                        <li div key={giphysToRender.id} className="giphyListItem">
+                                        <li className="giphyListItem">
                                             <div className="giphyImageContainer">
                                                 <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
                                                 <h4>{giphysToRender.title}</h4>
-                                                <a href={giphysToRender.url} target="_blank"><h4>Click Me!</h4></a>
+                                                <a href={giphysToRender.url} target="_blank" rel="noopener noreferrer"><h4>Click Me!</h4></a>
                                             </div>
                                         </li>
                                     </motion.div>
