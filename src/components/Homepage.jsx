@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import mainImage from '../assets/mainImage.png';
-class Header extends Component {
+class Homepage extends Component {
     
     render() {
         return (
@@ -12,8 +12,8 @@ class Header extends Component {
                     <div className="mainDescription">
                         <h1>giphy</h1>
                         <h2>Stay up to date to with trending Gif's.</h2>
-                        <span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, repellendus? Hic, laboriosam ut. Odio eveniet quod</p></span>
-                        <span><p>sapiente, est deserunt, adipisci quaerat cupiditate vel veniam voluptates saepe quam cumque? Molestiae, libero.</p></span>
+                        <span><p>This project started as a 2 hour hackathon project, decided to revisit is and add some more features. Adding reacts hooks and firestore next!</p></span>
+                        <span><p>The core functionality is to search for a term and return gifs based on your request. adding a trending section next.</p></span>
                     </div>
                 </div>
             </section>
@@ -21,6 +21,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
-
-
+export default Homepage;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar.js'
+import SearchBar from './SearchBar.jsx'
 import axios from "axios";
 import _ from 'lodash'
 import { motion } from "framer-motion";

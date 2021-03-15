@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Homepage from "./components/Homepage.js";
-import Results from "./components/Results.js";
+import Homepage from "./components/Homepage.jsx";
+import Results from "./components/Results.jsx";
 
 import "./App.scss";
 class App extends Component {
