@@ -12,7 +12,7 @@ class Homepage extends Component {
                     <div className="mainDescription">
                         <h1>giphy</h1>
                         <h2>Stay up to date to with trending Gif's.</h2>
-                        <span><p>This project started as a 2 hour hackathon project, decided to revisit is and add some more features. Adding reacts hooks and firestore next!</p></span>
+                        <span><p>This project started as a hackathon style project, decided to revisit is and add some more features. Adding reacts hooks and FireStore next!</p></span>
                         <span><p>The core functionality is to search for a term and return gifs based on your request. adding a trending section next.</p></span>
                     </div>
                 </div>
