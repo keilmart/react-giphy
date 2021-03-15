@@ -36,7 +36,7 @@ class Results extends Component {
     .then((trendingAxiosResponse) => {
         this.setState({
             giphyTrendingArray: trendingAxiosResponse.data.data,
-            loading: true,
+            loading: false,
             });
         }
             ).catch(
