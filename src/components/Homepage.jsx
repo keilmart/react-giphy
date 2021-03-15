@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import mainImage from '../assets/mainImage.png';
-class Homepage extends Component {
-    
-    render() {
+
+function Homepage() {   
         return (
             <section className='wrapper'>
                 <div className="homepageContainer">
@@ -18,7 +17,6 @@ class Homepage extends Component {
                 </div>
             </section>
         );
-    }
 }
 
 export default Homepage;

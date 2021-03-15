@@ -8,7 +8,6 @@ import Loader from "react-loader-spinner";
 const API_KEY = "P4hCy0QXgCWhBkBv1WS8E4upKd540JNg"
 
 class Results extends Component {
-
     constructor() {
     super();
         this.state = {
@@ -19,9 +18,34 @@ class Results extends Component {
     }
 
     componentDidMount() {
-        this.apiCallToGiphy("computer")
         this.apiCallToTrending()
+        this.apiCallToGiphy("computer")
     }
+
+    apiCallToTrending = async () => {
+        return await axios ({
+            method: `GET`,
+            dataResponse: `json`,
+            url: `http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
+            params: {
+                limit: 6,
+                offset: 0,
+        },
+    })
+    
+    .then((trendingAxiosResponse) => {
+        this.setState({
+            giphyTrendingArray: trendingAxiosResponse.data.data,
+            loading: true,
+            });
+        }
+            ).catch(
+                function (error) {
+                    console.log('An Error Has Occurred!')
+                    return Promise.reject(error)
+                }
+            );
+        }
 
     apiCallToGiphy = async (usersEnteredText) => {
         return await axios ({
@@ -34,10 +58,8 @@ class Results extends Component {
         },
     })
     
-    .then((giphyAxiosResponse) => {
-                
+    .then((giphyAxiosResponse) => {    
             // this is saving the data into set state.App // this refers to the component that we are inside of // every time setState runs, it re renders the page // 
-
         this.setState({
             giphyMainArray: giphyAxiosResponse.data.data,
             loading: false,
@@ -51,35 +73,7 @@ class Results extends Component {
             );
         }
 
-            apiCallToTrending = async () => {
-        return await axios ({
-            method: `GET`,
-            dataResponse: `json`,
-            url: `http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
-            params: {
-                limit: 6,
-                offset: 0,
-        },
-    })
-    
-    .then((trendingAxiosResponse) => {
-                
-            // this is saving the data into set state.App // this refers to the component that we are inside of // every time setState runs, it re renders the page // 
-        this.setState({
-            giphyTrendingArray: trendingAxiosResponse.data.data,
-            loading: false,
-            });
-        }
-            ).catch(
-                function (error) {
-                    console.log('An Error Has Occurred!')
-                    return Promise.reject(error)
-                }
-            );
-        }
-
     render() {
-        console.log(this.state.giphyTrendingArray)
         const apiCallToGiphy = _.debounce((usersEnteredText) => {this.apiCallToGiphy(usersEnteredText)}, 200)
 
         if (this.state.loading) {
@@ -94,52 +88,51 @@ class Results extends Component {
 
     return (
         <React.Fragment>
-                        <main className="flexContent">
+            <main className="flexContent">
 
-                            <h2 className="searchHeader">Todays trending Gif's</h2>
+                <h2 className="searchHeader">Todays trending Gif's</h2>
                             
-                            {this.state.giphyTrendingArray.map((giphysToRender) => {
-                                return (
-                                <div key={giphysToRender.id}>
-                                    <motion.div
-                                        whileHover={{ scale: 1.1 }}
-                                        whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
-                                    >
-                                        <li className="giphyListItem">
-                                            <div className="giphyImageContainer">
-                                                <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
-                                                <h4>{giphysToRender.title}</h4>
-                                                <a href={giphysToRender.url} target="_blank" rel="noopener noreferrer"><h4>Click Me!</h4></a>
-                                            </div>
-                                        </li>
-                                    </motion.div>
-                                </div>
-                                );
-                            })}
+                    {this.state.giphyTrendingArray.map((giphysToRender) => {
+                        return (
+                            <div key={giphysToRender.id}>
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
+                                >
+                                    <li className="giphyListItem">
+                                        <div className="giphyImageContainer">
+                                            <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
+                                            <h4>{giphysToRender.title}</h4>
+                                            <a href={giphysToRender.url} target="_blank" rel="noopener noreferrer"><h4>Click Me!</h4></a>
+                                        </div>
+                                    </li>
+                                </motion.div>
+                            </div>
+                            );
+                        })}
 
-                            <SearchBar onChange={(usersEnteredText) => apiCallToGiphy(usersEnteredText)} />
+                    <SearchBar onChange={(usersEnteredText) => apiCallToGiphy(usersEnteredText)} />
 
-                            {this.state.giphyMainArray.map((giphysToRender) => {
-                                return (
-                                <div key={giphysToRender.id}>
-                                    <motion.div
-                                        whileHover={{ scale: 1.1 }}
-                                        whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
-                                    >
-                                        <li className="giphyListItem">
-                                            <div className="giphyImageContainer">
-                                                <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
-                                                <h4>{giphysToRender.title}</h4>
-                                                <a href={giphysToRender.url} target="_blank" rel="noopener noreferrer"><h4>Click Me!</h4></a>
-                                            </div>
-                                        </li>
-                                    </motion.div>
-                                </div>
-                                );
-                            })}
-
-                        </main>
-        </React.Fragment>
+                    {this.state.giphyMainArray.map((giphysToRender) => {
+                        return (
+                            <div key={giphysToRender.id}>
+                                <motion.div
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.95, x: "-5px", y: "5px" }}
+                                >
+                                    <li className="giphyListItem">
+                                        <div className="giphyImageContainer">
+                                            <img src={giphysToRender.images.fixed_height.url} height="265" width="265" alt={giphysToRender.title}/>
+                                            <h4>{giphysToRender.title}</h4>
+                                            <a href={giphysToRender.url} target="_blank" rel="noopener noreferrer"><h4>Click Me!</h4></a>
+                                        </div>
+                                    </li>
+                                </motion.div>
+                            </div>
+                            );
+                        })}
+                    </main>
+            </React.Fragment>
         );
     }
 }

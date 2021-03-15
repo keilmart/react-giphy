@@ -18,7 +18,6 @@ class App extends Component {
         this.setState({
             displayHomepage: true,
             displayResults: false,
-            loading: false,
         });
     }
 
@@ -26,7 +25,6 @@ class App extends Component {
         this.setState({
             displayHomepage: false,
             displayResults: true,
-            loading: false,
         });
     }
 
@@ -42,8 +40,8 @@ class App extends Component {
         </div>
       </header >
       <main>
-        {this.state.displayHomepage ? <Homepage homepageProps={this.displayHomepage} /> : null}
-        {this.state.displayResults ? <Results resultsProps={this.state.displayResults} /> : null}
+        {this.state.displayHomepage ? <Homepage/> : null}
+        {this.state.displayResults ? <Results/> : null}
       </main>
     </React.Fragment>
     );
