@@ -26,7 +26,7 @@ class Results extends Component {
         return await axios ({
             method: `GET`,
             dataResponse: `json`,
-            url: `http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
+            url: `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}`,
             params: {
                 limit: 6,
                 offset: 0,
