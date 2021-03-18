@@ -2,7 +2,7 @@
 
 First Clone the Repo
 
-### `npm clone https://github.com/keilmart/react-giphy.git`
+### `git clone https://github.com/keilmart/react-giphy.git`
 
 
 Install the dependancies
