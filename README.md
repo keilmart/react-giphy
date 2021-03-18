@@ -4,20 +4,23 @@ First Clone the Repo
 
 ### `npm clone https://github.com/keilmart/react-giphy.git`
 
+Install the dependancies
+
+### `cd react-giphy`
+### `npm install`
+
 Start the App!
 
 ### `npm start`
 
-If the app dosent auto open, open:
+If the app dosent auto open, open localhost:3000
 
-`[http://localhost:3000](http://localhost:3000) to view it in the browser.`
+###`http://localhost:3000/`
 
 To open the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
-
-
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
