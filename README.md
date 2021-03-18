@@ -1,23 +1,32 @@
 ## Running The App
 
-First Clone the Repo
-
 ### `git clone https://github.com/keilmart/react-giphy.git`
 
+First Clone the Repo
 
-Install the dependancies
+-
 
 ### `cd react-giphy`
 ### `npm install`
 
+Install the dependancies
 
-Start the App!
+-
 
 ### `npm start`
 
+Start the App!
+
+-
+
+### `http://localhost:3000/`
 
 If the app dosent auto open, open localhost:3000
 
-### `http://localhost:3000/`
+-
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
 
 
